@@ -10,7 +10,7 @@ typedef struct {
 	size_t inst_amt;
 	// destroys the entire pool
 	void (*close) (sandbox_pool* self);
-} sandbox_pool
+} sandbox_pool;
 
 // instance of a single emulator
 typedef struct {
@@ -19,7 +19,7 @@ typedef struct {
 	// passes a program to the emulator, taking an argument to the program itself and a callback function pointer
 	// the callback function is invoked when the program is no longer executing
 	void (*pass) (sandbox_inst* self, uint8_t* prgm, size_t prgm_size, void (*callback) (int8_t response));
-} sandbox_inst
+} sandbox_inst;
 
 void __attribute__ ((constructor)) sandbox_init(void);
 void __attribute__ ((destructor)) sandbox_fini(void);

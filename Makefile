@@ -1,5 +1,5 @@
 CFLAGS = -D -O2
-LDFLAGS = -fPIC -I"$(JAVA_HOME)/include" -I"$(JAVA_HOME)/include/linux" -I"target/include" -shared
+LDFLAGS = -fvisibility=hidden -fPIC -I"$(JAVA_HOME)/include" -I"$(JAVA_HOME)/include/linux" -I"target/include" -shared
 
 SOURCES := $(wildcard *.c)
 OBJECTS := $(notdir $(SOURCES:.c=.o))
